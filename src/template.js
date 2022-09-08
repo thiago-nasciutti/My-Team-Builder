@@ -3,7 +3,7 @@ const managerCard = (manager) => {
  return `
     <div class="card mt-5" style="width: 18rem">
         <div class="card-header text-center text-light bg-primary">
-            <h5 class="card-title">${manager.getName()}</h5>
+            <h5 class="card-title text-warning">${manager.getName()}</h5>
             <h5 class="card-title">${manager.getRole()}</h5>
         </div>
         <div class="card-body bg-light">
@@ -22,7 +22,7 @@ const engineerCard = (engineer) => {
  return `
     <div class="card mt-5" style="width: 18rem">
         <div class="card-header text-center text-light bg-primary">
-            <h5 class="card-title">${engineer.getName()}</h5>
+            <h5 class="card-title text-warning">${engineer.getName()}</h5>
             <h5 class="card-title">${engineer.getRole()}</h5>
         </div>
         <div class="card-body bg-light">
@@ -41,7 +41,7 @@ const internCard = (intern) => {
  return `
     <div class="card mt-5" style="width: 18rem">
         <div class="card-header  text-center text-light bg-primary">
-            <h5 class="card-title">${intern.getName()}</h5>
+            <h5 class="card-title text-warning">${intern.getName()}</h5>
             <h5 class="card-title">${intern.getRole()}</h5>
         </div>
         <div class="card-body bg-light">
@@ -63,7 +63,7 @@ const buildHtml = (team) => {
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
         <title>Team Members</title>
     </head>
