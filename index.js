@@ -1,9 +1,12 @@
+//Requires
 const inquirer = require("inquirer");
 const fs = require("fs");
+const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const Manager = require("./lib/Manager");
 const buildHtml = require("./src/template");
+
+//Global Variables
 const teamMembers = [];
 
 //Manager Questions
@@ -90,6 +93,7 @@ const internQuestions = [
 
 //Functions
 function promptManagerFn() {
+ console.log("          *****  MANAGER  ****");
  inquirer.prompt(managerQuestions).then((managerAnswers) => {
   const manager = new Manager(
    managerAnswers.managerName,
@@ -97,14 +101,13 @@ function promptManagerFn() {
    managerAnswers.managerEmail,
    managerAnswers.managerOffice
   );
-  console.log(manager);
   teamMembers.push(manager);
-  console.log(teamMembers);
   promptMenuFn();
  });
 }
 
 function promptMenuFn() {
+ console.log("          *****  MENU  ****");
  inquirer.prompt(menuQuestions).then((menuAnswers) => {
   if (menuAnswers.menuAnswer == "Build an Engineer") {
    promptEngineerFn();
@@ -119,6 +122,7 @@ function promptMenuFn() {
 }
 
 function promptEngineerFn() {
+ console.log("          *****  ENGINEER  ****");
  inquirer.prompt(engineerQuestions).then((engineerAnswers) => {
   const engineer = new Engineer(
    engineerAnswers.engineerName,
@@ -126,14 +130,13 @@ function promptEngineerFn() {
    engineerAnswers.engineerEmail,
    engineerAnswers.engineerGithub
   );
-  console.log(engineer);
   teamMembers.push(engineer);
-  console.log(teamMembers);
   promptMenuFn();
  });
 }
 
 function promptInternFn() {
+ console.log("          *****  INTERN  ****");
  inquirer.prompt(internQuestions).then((internAnswers) => {
   const intern = new Intern(
    internAnswers.internName,
@@ -141,18 +144,14 @@ function promptInternFn() {
    internAnswers.internEmail,
    internAnswers.internSchool
   );
-  console.log(intern);
   teamMembers.push(intern);
-  console.log(teamMembers);
   promptMenuFn();
  });
 }
 
 function promptHtmlFn() {
- console.log(teamMembers);
- fs.writeFile("./dist/index.html", buildHtml(teamMembers), (error) => {
-  console.log(error);
- });
+ console.log("HTML");
+ fs.writeFile("./dist/index.html", buildHtml(teamMembers), (error) => {});
 }
 
 //Call Functions

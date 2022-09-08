@@ -8,9 +8,9 @@ const managerCard = (manager) => {
         </div>
         <div class="card-body bg-light">
             <ul class="list-group">
-                <li class="group-item">     ID:  ${manager.getId()}</li>
-                <li class="group-item">Email:<a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
-                <li class="group-item">Office Number:${manager.getOffice()}</li>
+                <li class="group-item">ID:  ${manager.getId()}</li>
+                <li class="group-item">Email:   <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
+                <li class="group-item">Office Number:   ${manager.getOffice()}</li>
             </ul>
         </div>
     </div>
